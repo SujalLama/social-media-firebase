@@ -1,0 +1,11 @@
+.dropzone-wrapper {
+  display: flex;
+  align-items: center;
+
+  .dropzone {
+    border: 0.2rem dotted #000;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.4rem;
+  }
+}

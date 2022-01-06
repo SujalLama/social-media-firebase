@@ -1,0 +1,67 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+.background-primary {
+  background-color: $primary-color;
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.link--default {
+  color: #000;
+  text-decoration: none;
+}
+
+.flex-center {
+  width: 100vw !important;
+  height: 100vh;
+
+  .form-group {
+    width: 30% !important;
+  }
+
+  .btn {
+    width: 30% !important;
+  }
+}
+
+.box-shadow {
+  box-shadow: 0.1rem 0.1rem 0.8rem 0.4rem lighten($light-grey, 38%);
+}
+
+.border-radius {
+  border-radius: 0.8rem;
+}
+
+.notification {
+  width: 2rem;
+  height: 2rem;
+  @include centerElement;
+  background-color: $red;
+  border-radius: 50%;
+  color: $white;
+  font-size: 1.2rem;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

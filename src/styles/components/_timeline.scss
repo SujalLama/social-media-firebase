@@ -1,0 +1,133 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 100%;
+  position: relative;
+  z-index: 99;
+  grid-template-areas:
+    "a b c"
+    "d e f"
+    "g h i";
+
+  @include respond(mp) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "a b "
+      "c d "
+      "e f";
+  }
+
+  .vertical-line {
+    position: absolute;
+    width: 0.3rem;
+    height: 70rem;
+    background-color: $primary-color;
+    left: 50%;
+    top: 10%;
+    z-index: -1;
+    @include respond(mp) {
+      left: 25%;
+    }
+  }
+
+  .icon {
+    &-1 {
+      grid-area: b;
+      @include centerElement;
+
+      @include respond(mp) {
+        grid-area: a;
+      }
+
+      &__content {
+        grid-area: c;
+        @include centerElement;
+        flex-direction: column;
+        align-items: flex-start;
+
+        @include respond(mp) {
+          grid-area: b;
+        }
+      }
+    }
+
+    &-2 {
+      grid-area: e;
+      @include centerElement;
+      @include respond(mp) {
+        grid-area: c;
+      }
+
+      &__content {
+        grid-area: d;
+        @include centerElement;
+        flex-direction: column;
+        align-items: flex-end;
+        text-align: right;
+
+        @include respond(mp) {
+          align-items: flex-start;
+          text-align: left;
+        }
+      }
+    }
+
+    &-3 {
+      grid-area: h;
+      @include centerElement;
+
+      @include respond(mp) {
+        grid-area: e;
+      }
+
+      &__content {
+        grid-area: i;
+        @include centerElement;
+        flex-direction: column;
+        align-items: flex-start;
+
+        @include respond(mp) {
+          grid-area: f;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    width: 18rem;
+    height: 18rem;
+    border: 0.2rem solid $primary-color;
+    border-radius: 50%;
+    background-color: #fff;
+    @include centerElement;
+    font-size: 10rem;
+    color: $grey;
+  }
+
+  .heading,
+  .sub-heading {
+    font-size: 3.4rem;
+    color: $primary-color;
+  }
+
+  .sub-heading {
+    font-size: 2.4rem;
+    margin-top: 1.2rem;
+    margin-left: 2rem;
+  }
+
+  .list {
+    list-style: none;
+
+    li {
+      font-size: 2rem;
+      margin: 0.4rem 0;
+      margin-left: 3rem;
+      margin-right: 1rem;
+    }
+  }
+}

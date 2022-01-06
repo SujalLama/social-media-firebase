@@ -1,0 +1,68 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+.header-wrapper {
+  background-color: $white;
+  height: 8rem;
+
+  .header {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__left {
+      display: flex;
+      align-items: center;
+
+      .logo {
+        width: 4rem;
+        height: 4rem;
+        background-color: $primary-light-color;
+        border-radius: 0.8rem;
+        padding: 0.8rem;
+        margin-right: 1.4rem;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+
+    &__right {
+      display: flex;
+      align-items: center;
+
+      border-radius: 0.8rem;
+      height: 3.8rem;
+
+      .search-container {
+        margin-right: 2rem;
+        background-color: $primary-light-color;
+        height: 100%;
+        border-radius: 0.8rem;
+        padding: 0.6rem 1rem;
+        display: flex;
+        align-items: center;
+
+        svg {
+          font-size: 1.5rem;
+          margin-right: 1rem;
+        }
+        input {
+          height: 100%;
+          width: 30rem;
+          outline: none;
+          border: none;
+          background-color: inherit;
+        }
+      }
+      .btn {
+        height: 3.8rem;
+        margin-right: 2rem;
+      }
+    }
+  }
+}

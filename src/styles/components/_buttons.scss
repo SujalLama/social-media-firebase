@@ -1,0 +1,60 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+.btn {
+  outline: none;
+  border: 0;
+  background-color: inherit;
+  font-size: 1.4rem;
+  padding: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &:disabled,
+  &[disabled] {
+    background-color: $grey !important;
+    cursor: not-allowed;
+  }
+
+  &__primary {
+    background-color: $primary-color;
+    color: #fff;
+    border-radius: 0.8rem;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+
+    .icon-rotate {
+      transform: rotate(-90deg);
+    }
+
+    span {
+      margin: 0 1.1rem;
+    }
+  }
+
+  &__text {
+    padding: 0;
+    width: 70px !important;
+    margin-top: 0 !important;
+    color: $primary-color;
+
+    &:hover {
+      color: darken($primary-color, 10%);
+    }
+  }
+
+  &__create {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // font-size: 1.6rem;
+    font-weight: bold;
+    svg {
+      font-size: 2rem;
+    }
+  }
+}

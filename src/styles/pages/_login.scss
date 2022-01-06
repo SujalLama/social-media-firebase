@@ -1,0 +1,26 @@
+.login {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__banner {
+    width: 50%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: left;
+      border-bottom-left-radius: 0.8rem;
+      border-top-left-radius: 0.8rem;
+    }
+  }
+
+  .form__login {
+    width: 50%;
+    height: 100%;
+  }
+}

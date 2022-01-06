@@ -1,0 +1,56 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.component-wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+
+  .modal-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+
+    z-index: 5000;
+    @include centerElement;
+
+    .modal {
+      width: 50%;
+      background-color: #fff;
+      border-radius: 0.6rem;
+      padding: 2rem;
+
+      &__delete {
+        h4 {
+          font-size: 2rem;
+          font-weight: normal;
+        }
+
+        .btn {
+          border-radius: 0.4rem;
+          margin-top: 2rem;
+          width: 10rem;
+        }
+      }
+
+      &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 1.4rem;
+        margin-bottom: 2rem;
+
+        .close-icon {
+          font-size: 2rem;
+          cursor: pointer;
+          &:hover {
+            color: $grey;
+          }
+        }
+      }
+    }
+  }
+}

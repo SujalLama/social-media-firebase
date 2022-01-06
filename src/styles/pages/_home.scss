@@ -1,0 +1,33 @@
+@import "../abstracts/variables";
+
+.home {
+  background-color: $dark-white;
+  width: 100vw;
+  min-height: 100vh;
+
+  display: grid;
+  gap: 4rem;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 8rem 1fr;
+
+  .top-bar {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+  }
+
+  .navbar {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    margin-left: 4rem;
+  }
+
+  .main-content {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+  .sidebar {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+  }
+}

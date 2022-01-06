@@ -1,0 +1,20 @@
+@import "../abstracts/variables";
+
+.input {
+  &--default {
+    height: 4.3rem;
+    outline: none;
+    border: none;
+    border: 0.3rem solid $light-grey;
+    padding: 0.8rem 1rem;
+    border-radius: 0.6rem;
+
+    &:focus {
+      border-color: $blue;
+    }
+  }
+}
+
+::placeholder {
+  color: $grey;
+}

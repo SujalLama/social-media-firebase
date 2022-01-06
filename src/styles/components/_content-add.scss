@@ -1,0 +1,15 @@
+@import "../abstracts/variables";
+
+.content-add {
+  padding: 2rem;
+  background-color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .input--default {
+    flex: 1;
+    margin: 0 1rem;
+    border: none;
+  }
+}
