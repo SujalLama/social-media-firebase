@@ -119,6 +119,14 @@ $breakpoint argument choices:
   border-radius: 0.8rem;
 }
 
+.width-100 {
+  width: 100% !important;
+}
+
+.margin-top {
+  margin-top: 2rem;
+}
+
 .notification {
   width: 2rem;
   height: 2rem;
@@ -129,6 +137,10 @@ $breakpoint argument choices:
   border-radius: 50%;
   color: #fff;
   font-size: 1.2rem;
+}
+
+::placeholder {
+  font-family: "Raleway", sans-serif;
 }
 
 /* width */
@@ -862,8 +874,8 @@ $breakpoint argument choices:
 -big-desktop: bd
 */
 .component-wrapper {
-  width: 100vw;
-  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
   position: relative;
 }
 .component-wrapper .modal-wrapper {
@@ -877,8 +889,10 @@ $breakpoint argument choices:
   display: flex;
   align-items: center;
   justify-content: center;
+  align-items: flex-start;
 }
 .component-wrapper .modal-wrapper .modal {
+  margin-top: 5rem;
   width: 50%;
   background-color: #fff;
   border-radius: 0.6rem;
@@ -911,12 +925,24 @@ $breakpoint argument choices:
 .dropzone-wrapper {
   display: flex;
   align-items: center;
+  justify-content: center;
+  position: relative;
 }
-.dropzone-wrapper .dropzone {
-  border: 0.2rem dotted #000;
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 0.4rem;
+.dropzone-wrapper .dropzone-icon {
+  position: absolute;
+  z-index: 1000;
+  font-size: 1.8rem;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+}
+.dropzone-wrapper .dropzone-icon:hover {
+  color: grey;
+}
+.dropzone-wrapper .dropzone-content {
+  position: absolute;
+  z-index: 1000;
+  font-size: 1.8rem;
 }
 
 /*
@@ -969,11 +995,91 @@ $breakpoint argument choices:
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 2rem;
 }
 .content-add .input--default {
   flex: 1;
   margin: 0 1rem;
   border: none;
+}
+
+.post {
+  padding: 2rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.post__owner {
+  display: flex;
+  align-items: center;
+}
+.post__content {
+  margin-top: 2rem;
+}
+.post__content .paragraph {
+  margin-bottom: 1rem;
+}
+.post__content--multimedia {
+  width: 100%;
+  height: 20rem;
+  margin-bottom: 2rem;
+}
+.post__content--multimedia .img-wrapper {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.8rem;
+}
+.post__content--multimedia .img-wrapper img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.8rem;
+  object-fit: cover;
+  object-position: center;
+}
+.post__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+  border-radius: 0.8rem;
+  border: 1px solid #e6e6e6;
+}
+.post__footer .btn {
+  width: 50% !important;
+  height: 100% !important;
+  color: #999999;
+  display: flex;
+  align-items: center;
+}
+.post__footer .btn span {
+  margin-left: 1rem;
+}
+.post__footer .btn:first-child {
+  border-bottom-left-radius: 0.8rem;
+  border-top-left-radius: 0.8rem;
+}
+.post__footer .btn:last-child {
+  border-bottom-right-radius: 0.8rem;
+  border-top-right-radius: 0.8rem;
+}
+.post__footer .btn:hover {
+  background-color: #e6e6e6;
+  color: #1778f2;
+}
+.post__footer .btn.active {
+  background-color: #e6e6e6;
+  color: #1778f2;
+}
+.post .comment {
+  margin-top: 2rem;
+}
+.post .comment .content-add {
+  padding: 0.6rem;
+}
+
+.post-create-field {
+  width: 100%;
+  height: 12rem;
+  resize: none;
 }
 
 /*

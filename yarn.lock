@@ -1206,6 +1206,20 @@
   "resolved" "https://registry.npmjs.org/@csstools/normalize.css/-/normalize.css-10.1.0.tgz"
   "version" "10.1.0"
 
+"@dropzone-ui/react@^6.4.2":
+  "integrity" "sha512-cpiTeras3GWxNIfUWrr+8Iuph/fPZSKjuDMxxblvyMU7u9F1H7BrWKngygMKtPvX4axXX1NSkIq6JBtNIATDTw=="
+  "resolved" "https://registry.npmjs.org/@dropzone-ui/react/-/react-6.4.2.tgz"
+  "version" "6.4.2"
+  dependencies:
+    "@dynamicss/dynamicss" "^2.2.0"
+    "@unlimited-react-components/kernel" "^1.0.2"
+    "@unlimited-react-components/material-button" "^1.2.8"
+
+"@dynamicss/dynamicss@^2.0.3", "@dynamicss/dynamicss@^2.2.0":
+  "integrity" "sha512-74nARZcYDAtCGyE/rvVowFKvnbWAqmkX1u2gcCNT9SeV3wE8huT5UAcQ0wJIovS7xOQcHvSXZduGQ+CM3nZnwQ=="
+  "resolved" "https://registry.npmjs.org/@dynamicss/dynamicss/-/dynamicss-2.2.0.tgz"
+  "version" "2.2.0"
+
 "@eslint/eslintrc@^0.4.3":
   "integrity" "sha512-J6KFFz5QCYUJq3pf0mjEcCJVERbzv71PUIDczuh9JkwGEzced6CO5ADLHB1rbf/+oPBtoPfMYNOpGDzCANlbXw=="
   "resolved" "https://registry.npmjs.org/@eslint/eslintrc/-/eslintrc-0.4.3.tgz"
@@ -2525,6 +2539,19 @@
   dependencies:
     "@typescript-eslint/types" "4.33.0"
     "eslint-visitor-keys" "^2.0.0"
+
+"@unlimited-react-components/kernel@^1.0.2":
+  "integrity" "sha512-yzTua10xjcLDOR/jMXdyPKjzsWDxsez6aE7QTFa16FtGqeU/jhBxzoxsopPJa+Lu3dtu4siSG6xIE52YLu7bZw=="
+  "resolved" "https://registry.npmjs.org/@unlimited-react-components/kernel/-/kernel-1.0.2.tgz"
+  "version" "1.0.2"
+
+"@unlimited-react-components/material-button@^1.2.8":
+  "integrity" "sha512-gKSKysNUFWG774mV6NhAvbx8Fzv+QqO6DRs61k3N+M0pf5AueADpnJMgChIPLJvhjfWEoU3Z9K84lVrpWftACg=="
+  "resolved" "https://registry.npmjs.org/@unlimited-react-components/material-button/-/material-button-1.2.8.tgz"
+  "version" "1.2.8"
+  dependencies:
+    "@dynamicss/dynamicss" "^2.0.3"
+    "@unlimited-react-components/kernel" "^1.0.2"
 
 "@webassemblyjs/ast@1.9.0":
   "integrity" "sha512-C6wW5L+b7ogSDVqymbkkvuW9kruN//YisMED04xzeBBqjHa2FYnmvOlS6Xj68xWQRgWvI9cIglsjFowH/RJyEA=="
@@ -4933,6 +4960,13 @@
   "integrity" "sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw=="
   "resolved" "https://registry.npmjs.org/dotenv/-/dotenv-8.2.0.tgz"
   "version" "8.2.0"
+
+"dropzone-ui@^6.4.2":
+  "integrity" "sha512-bJ0qAndAUpJAqdqVy4DTfaAIujM8fI0Qj/MdGy/E/zupUuQOHTZa3qOshr456fvhjNBWSQkBrGObp/7V56KkbQ=="
+  "resolved" "https://registry.npmjs.org/dropzone-ui/-/dropzone-ui-6.4.2.tgz"
+  "version" "6.4.2"
+  dependencies:
+    "@dropzone-ui/react" "^6.4.2"
 
 "duplexer@^0.1.1":
   "integrity" "sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg=="

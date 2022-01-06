@@ -8,8 +8,9 @@ function DropzoneComponent({files, setFiles, accept}) {
             setFiles(files);
         }
     }
+    console.log(files);
     return (
-        <div className="dropzone-wrapper">
+        <div className="dropzone-wrapper width-100">
                 <Dropzone onDrop={onDrop} maxFiles={1} accept={accept}>
                             {({ getRootProps, getInputProps }) => (
                             <section>
@@ -19,11 +20,10 @@ function DropzoneComponent({files, setFiles, accept}) {
                                 Array.isArray(files) &&
                                 files.length ? (
                                     <div className="selected-file">
-                                    {files.length && files.map((file, i) => `${file.name}`)}
-                                    
+                                    {files.length && <img src={files[0].preview} alt="image downloaded"/>}
                                     </div>
                                 ) : (
-                                    `Drop files, or click here`
+                                    `Add photos/videos`
                                 )}
                                 </div>
                             </section>

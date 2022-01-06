@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.24.0",
     "concurrently": "^7.0.0",
+    "dropzone-ui": "^6.4.2",
     "firebase": "^9.6.1",
     "formik": "^2.2.9",
     "history": "^4.10.1",

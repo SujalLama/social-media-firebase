@@ -8,7 +8,7 @@ import {FaUser} from 'react-icons/fa';
 import ProfilePic from './ProfilePic';
 
 
-const Header = ({history}) => {
+const Header = ({history, setOpenModal}) => {
     return (
         <div className='header-wrapper box-shadow'>
             <div className="header container">
@@ -23,7 +23,7 @@ const Header = ({history}) => {
                         <AiOutlineSearch />
                     <input type="text" className="input__default" placeholder="Search"/>
                     </div>
-                    <div className="btn btn__primary btn__create">
+                    <div className="btn btn__primary btn__create" onClick={() => setOpenModal(true)}>
                         <IoIosAddCircleOutline />
                         <span>Create</span>
                     </div>

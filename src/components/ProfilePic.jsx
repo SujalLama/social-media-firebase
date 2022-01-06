@@ -5,7 +5,7 @@ const ProfilePic = () => {
     return (
          <div className="profile-pic">
                 <FaUser />
-            </div>
+        </div>
     )
 }
 
