@@ -1,0 +1,53 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+.profile {
+  background-color: $white;
+  @include centerElement();
+  padding: 2rem;
+  position: relative;
+  flex-direction: column;
+
+  .profile-pic {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+  }
+
+  .profile-image {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+  }
+
+  .btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  &__details {
+    margin-top: 3rem;
+    width: 100% !important;
+    .row {
+      display: flex;
+      align-items: center;
+      //   margin-bottom: 1rem;
+      font-size: 1.6rem;
+      padding: 1rem 0;
+
+      &:not(:last-child) {
+        border-bottom: 0.1rem solid lighten($light-grey, 30%);
+      }
+      .label {
+        font-weight: bold;
+        width: 20%;
+      }
+
+      .value {
+        width: 80%;
+        line-height: 1.5;
+      }
+    }
+  }
+}

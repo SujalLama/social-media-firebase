@@ -54,6 +54,11 @@
   font-size: 1.2rem;
 }
 
+.error-message {
+  color: $red;
+  font-size: 1.4rem;
+}
+
 ::placeholder {
   font-family: "Raleway", sans-serif;
 }
@@ -61,6 +66,7 @@
 /* width */
 ::-webkit-scrollbar {
   width: 1rem;
+  display: none;
 }
 
 /* Track */

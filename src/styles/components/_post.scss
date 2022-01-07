@@ -1,9 +1,10 @@
-@import "../abstracts//variables";
+@import "../abstracts/variables";
 
 .post {
   padding: 2rem;
   width: 100%;
   margin-bottom: 2rem;
+  background-color: $white;
 
   &__owner {
     display: flex;
@@ -30,6 +31,14 @@
         img {
           width: 100%;
           height: 100%;
+          border-radius: 0.8rem;
+          object-fit: cover;
+          object-position: center;
+        }
+
+        > div {
+          width: 100% !important;
+          height: 100% !important;
           border-radius: 0.8rem;
           object-fit: cover;
           object-position: center;

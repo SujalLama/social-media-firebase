@@ -57,4 +57,15 @@
       font-size: 2rem;
     }
   }
+
+  &__circle {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    font-size: 1.4rem;
+
+    &:hover {
+      background-color: $primary-light-color;
+    }
+  }
 }

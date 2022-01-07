@@ -1,3 +1,5 @@
+@import "../abstracts/mixins";
+
 .login {
   width: 100vw;
   height: 100vh;
@@ -8,6 +10,10 @@
   &__banner {
     width: 50%;
     height: 100%;
+
+    @include respond(tp) {
+      display: none;
+    }
 
     img {
       width: 100%;
@@ -22,5 +28,13 @@
   .form__login {
     width: 50%;
     height: 100%;
+
+    @include respond(tp) {
+      width: 70%;
+    }
+
+    @include respond(mp) {
+      width: 90%;
+    }
   }
 }

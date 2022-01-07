@@ -3,32 +3,13 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './styles/styles.css';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
-// react-redux
-import {Provider} from 'react-redux';
-import store from './redux/store';
 
-// react-query
-import {
-  QueryClient,
-  QueryClientProvider,
-} from 'react-query'
-
-// Create a client
- const queryClient = new QueryClient({
-   defaultOptions: {
-    queries: {
-      refetchOnWindowFocus: false
-    }
-  }})
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <QueryClientProvider client={queryClient}>
       <App />
-      </QueryClientProvider>
-    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

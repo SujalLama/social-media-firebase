@@ -1,8 +1,20 @@
-import React from 'react'
+import React,{useState} from 'react'
  import { Formik, Form, Field, ErrorMessage } from 'formik';
  import {withRouter} from 'react-router-dom';
+import { login } from '../service/auth';
+import { checkLocalStorage } from '../utils/checkAuth';
+import { Redirect } from 'react-router-dom';
 
 const LoginScreen = ({history}) => {
+    const[error, setError] = useState('');
+    async function loginFunc({email, password}, setSubmitting) {
+    await login({email, password}, setError);
+    setSubmitting(false);
+    }
+
+   if(checkLocalStorage()) {
+     return <Redirect to="/" />
+   }
     return (
         <div className='login'>
             <div className="login__banner">
@@ -12,6 +24,7 @@ const LoginScreen = ({history}) => {
                 <h2 className="form__login--heading">
                 Login to your account.
                 </h2>
+                {error && <div className='error-message'>{error}</div>}
                 <div className="form__login--content">
                     <Formik
                         initialValues={{ email: '', password: '' }}
@@ -27,10 +40,7 @@ const LoginScreen = ({history}) => {
                             return errors;
                         }}
                         onSubmit={(values, { setSubmitting }) => {
-                            setTimeout(() => {
-                            alert(JSON.stringify(values, null, 2));
-                            setSubmitting(false);
-                            }, 400);
+                           loginFunc(values, setSubmitting)
                         }}
                         >
                         {({ isSubmitting }) => (
@@ -45,7 +55,7 @@ const LoginScreen = ({history}) => {
                                     <Field type="password" name="password" placeholder="password" className="input-field"/>
                                     <ErrorMessage name="password" component="div" className="error-msg"/>
                                 </div>
-                            <button className="btn btn__primary" type="submit" disabled={isSubmitting}>
+                            <button className="btn btn__primary" type="submit" disabled={isSubmitting} >
                                 Login
                             </button>
                             </Form>

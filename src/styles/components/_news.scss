@@ -1,0 +1,50 @@
+@import "../abstracts/variables";
+
+.news-feed {
+  padding: 1rem;
+}
+
+.news {
+  color: $white;
+  display: flex;
+  align-items: center;
+  padding: 1.4rem 0;
+  position: relative;
+
+  .close-icon {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    z-index: 1000;
+    color: #000;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    &:hover {
+      color: grey;
+    }
+  }
+
+  &:not(:last-child) {
+    border-bottom: 0.1rem solid lighten($light-grey, 30%);
+  }
+
+  .paragraph {
+    color: $primary-color;
+  }
+
+  &__creator {
+    display: flex;
+    align-items: center;
+  }
+
+  &__message {
+    margin: 0 0.6rem;
+    color: $black;
+
+    .message {
+      //   font-weight: bold;
+      font-size: 1.3rem;
+    }
+  }
+}

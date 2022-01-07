@@ -4696,7 +4696,7 @@
   "resolved" "https://registry.npmjs.org/deepmerge/-/deepmerge-2.2.1.tgz"
   "version" "2.2.1"
 
-"deepmerge@^4.2.2":
+"deepmerge@^4.0.0", "deepmerge@^4.2.2":
   "integrity" "sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg=="
   "resolved" "https://registry.npmjs.org/deepmerge/-/deepmerge-4.2.2.tgz"
   "version" "4.2.2"
@@ -7810,6 +7810,11 @@
   "resolved" "https://registry.npmjs.org/lines-and-columns/-/lines-and-columns-1.2.4.tgz"
   "version" "1.2.4"
 
+"load-script@^1.0.0":
+  "integrity" "sha1-BJGTngvuVkPuSUp+PaPSuscMbKQ="
+  "resolved" "https://registry.npmjs.org/load-script/-/load-script-1.0.0.tgz"
+  "version" "1.0.0"
+
 "loader-runner@^2.4.0":
   "integrity" "sha512-Jsmr89RcXGIwivFY21FcRrisYZfvLMTWx5kOLc+JTxtpBOG6xML0vzbc6SEQG2FO9/4Fc3wW4LVcB5DmGflaRw=="
   "resolved" "https://registry.npmjs.org/loader-runner/-/loader-runner-2.4.0.tgz"
@@ -7952,22 +7957,7 @@
   "resolved" "https://registry.npmjs.org/lodash.uniq/-/lodash.uniq-4.5.0.tgz"
   "version" "4.5.0"
 
-"lodash@^4.17.11", "lodash@^4.17.14", "lodash@^4.17.15", "lodash@^4.17.5", "lodash@^4.7.0", "lodash@>=3.5 <5":
-  "integrity" "sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A=="
-  "resolved" "https://registry.npmjs.org/lodash/-/lodash-4.17.15.tgz"
-  "version" "4.17.15"
-
-"lodash@^4.17.19":
-  "integrity" "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
-  "resolved" "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
-  "version" "4.17.21"
-
-"lodash@^4.17.20":
-  "integrity" "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
-  "resolved" "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
-  "version" "4.17.21"
-
-"lodash@^4.17.21":
+"lodash@^4.17.11", "lodash@^4.17.14", "lodash@^4.17.15", "lodash@^4.17.19", "lodash@^4.17.20", "lodash@^4.17.21", "lodash@^4.17.5", "lodash@^4.7.0", "lodash@>=3.5 <5":
   "integrity" "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
   "resolved" "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
   "version" "4.17.21"
@@ -8094,6 +8084,11 @@
   "integrity" "sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g="
   "resolved" "https://registry.npmjs.org/media-typer/-/media-typer-0.3.0.tgz"
   "version" "0.3.0"
+
+"memoize-one@^5.1.1":
+  "integrity" "sha512-zYiwtZUcYyXKo/np96AGZAckk+FWWsUdJ3cHGGmld7+AhvcWmQyGCYUh1hc4Q/pkOhb65dQR/pqCyK0cOaHz4Q=="
+  "resolved" "https://registry.npmjs.org/memoize-one/-/memoize-one-5.2.1.tgz"
+  "version" "5.2.1"
 
 "memory-fs@^0.4.1":
   "integrity" "sha1-OpoguEYlI+RHz7x+i7gO1me/xVI="
@@ -10150,6 +10145,11 @@
   "resolved" "https://registry.npmjs.org/react-fast-compare/-/react-fast-compare-2.0.4.tgz"
   "version" "2.0.4"
 
+"react-fast-compare@^3.0.1":
+  "integrity" "sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA=="
+  "resolved" "https://registry.npmjs.org/react-fast-compare/-/react-fast-compare-3.2.0.tgz"
+  "version" "3.2.0"
+
 "react-hook-form@^7.21.0":
   "integrity" "sha512-aekCf+dedYFIg+7nCK2acMvZ+s6Ohw2I7UNQ+zNIadBl1SoXow2Tl6c3F49xF8GFCdn5jeK43JHH26rmtdRyLQ=="
   "resolved" "https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.21.0.tgz"
@@ -10179,6 +10179,24 @@
   "integrity" "sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w=="
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
   "version" "17.0.2"
+
+"react-loader-spinner@^4.0.0":
+  "integrity" "sha512-RU2vpEej6G4ECei0h3q6bgLU10of9Lw5O+4AwF/mtkrX5oY20Sh/AxoPJ7etbrs/7Q3u4jN5qwCwGLRKCHpk6g=="
+  "resolved" "https://registry.npmjs.org/react-loader-spinner/-/react-loader-spinner-4.0.0.tgz"
+  "version" "4.0.0"
+  dependencies:
+    "prop-types" "^15.7.2"
+
+"react-player@^2.9.0":
+  "integrity" "sha512-jNUkTfMmUhwPPAktAdIqiBcVUKsFKrVGH6Ocutj6535CNfM91yrvWxHg6fvIX8Y/fjYUPoejddwh7qboNV9vGA=="
+  "resolved" "https://registry.npmjs.org/react-player/-/react-player-2.9.0.tgz"
+  "version" "2.9.0"
+  dependencies:
+    "deepmerge" "^4.0.0"
+    "load-script" "^1.0.0"
+    "memoize-one" "^5.1.1"
+    "prop-types" "^15.7.2"
+    "react-fast-compare" "^3.0.1"
 
 "react-query@^3.34.0":
   "integrity" "sha512-g6L90FeCLzz6+53CbVKYJALBiZR5icOYPjqGGiNgHNeufcnddLZaQGE9wheclk10k6g+o+Dd4/jAtswhjVblXw=="
@@ -10314,7 +10332,7 @@
   "resolved" "https://registry.npmjs.org/react-timer-hook/-/react-timer-hook-3.0.5.tgz"
   "version" "3.0.5"
 
-"react@*", "react@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@^15.5.4 || ^16.0.0 || ^17.0.0", "react@^16.8.0 || ^17", "react@^16.8.0 || ^17.0.0", "react@^16.8.3 || ^17", "react@^17.0.2", "react@>= 16", "react@>= 16.8", "react@>=15", "react@>=16", "react@>=16.8.0", "react@17.0.2":
+"react@*", "react@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@^15.5.4 || ^16.0.0 || ^17.0.0", "react@^16.8.0 || ^17", "react@^16.8.0 || ^17.0.0", "react@^16.8.3 || ^17", "react@^17.0.2", "react@>= 16", "react@>= 16.8", "react@>=15", "react@>=16", "react@>=16.6.0", "react@>=16.8.0", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"

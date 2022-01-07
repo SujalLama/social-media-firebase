@@ -18,12 +18,12 @@ export default function DragDrop({files, setFiles, closeDrag}) {
   return (
       <div className="dropzone-wrapper">
           <div className="dropzone-icon" onClick={() => closeDrag(false)} ><IoCloseCircleSharp /></div>
-          <div className="dropzone-content">Add photos / videos</div>
+          {/* <div className="dropzone-content">Add photos / videos</div> */}
         <Dropzone
         onChange={updateFiles}
         value={files}
-        maxFiles={3}
-        maxFileSize={29980000}
+        maxFiles={1}
+        maxFileSize={299800000}
         accept="image/*, video/*"
         header={false}
         footer={false}

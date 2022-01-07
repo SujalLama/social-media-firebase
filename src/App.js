@@ -13,6 +13,7 @@ import PrivateRoute from "./utils/PrivateRoute";
 // admin screen
 import history from "./utils/history";
 import ProfileScreen from "./screens/ProfileScreen";
+import NewsFeedScreen from "./screens/NewsFeedScreen";
 
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
         <Switch>
           <PrivateRoute path="/" component={Homescreen} exact />
           <PrivateRoute path="/profile" component={ProfileScreen} exact />
+          <PrivateRoute path="/news" component={NewsFeedScreen} exact />
           <Route path="/register" exact>
             <RegisterScreen />
           </Route>

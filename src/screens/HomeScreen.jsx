@@ -1,84 +1,99 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import ContentAdd from '../components/ContentAdd';
-import Header from '../components/Header';
 import ModalComponent from '../components/ModalComponent';
-import Navbar from '../components/Navbar';
 import Posts from '../components/Posts';
-import ProfileInfo from '../components/ProfileInfo';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import DropzoneComponent from '../components/DropzoneComponent';
-import {AiOutlineVideoCameraAdd} from 'react-icons/ai';
-import {MdOutlineAddPhotoAlternate} from 'react-icons/md';
 import DragDrop from '../components/DragDrop';
+import MainLayout from '../layout/MainLayout';
+import { createPost } from '../service/post';
+import { db } from '../config/firebase-config';
+import { collection, query, orderBy, onSnapshot } from "firebase/firestore";
+import { userFromLocalStorage } from '../utils/userFromLocalStorage';
+import Loader from "react-loader-spinner";
 
 const HomeScreen = () => {
   const[openModal, setOpenModal] =useState(false);
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const[user, setUser] = useState({});
+
+  //listening to posts
+   useEffect(() => {
+    const q = query(collection(db, "posts"), orderBy("postedAt", "desc"));
+      const unsubscribe = onSnapshot(q, (querySnapshot) => {
+        const posts = [];
+        querySnapshot.forEach((doc) => {
+          posts.push({id: doc.id, ...doc.data()});
+        });
+        setPosts(posts);
+        setLoading(false);        
+      });
+      return () => unsubscribe();
+  }, []);
+
+
+    useEffect(() => {
+    if(userFromLocalStorage()) {
+      setUser(userFromLocalStorage())
+    }
+    }, []);
+
+
     return (
       <ModalComponent 
       openModal={openModal}
       setOpenModal={setOpenModal}
       title="Create Post"
-      component={<CreatePostForm />}
+      component={<CreatePostForm setOpenModal={setOpenModal} />}
       >
-        <div className='home'>
-          <div className="top-bar">
-          <Header setOpenModal={setOpenModal} />
-          </div>
-          <div className="navbar">
-          <ProfileInfo />
-          <Navbar />
-          </div>
-          <div className="main-content">
-            <ContentAdd  setOpenModal={setOpenModal} btn="post it" placeholder="What's new, Sujal?"/>
-            <Posts />
-          </div>
-          <div className="sidebar">
-          </div>
-        </div>
+       <MainLayout setOpenModal={setOpenModal}>
+            <ContentAdd  setOpenModal={setOpenModal} btn="post it" placeholder={`What's new, ${user.username}?`}/>
+           {loading 
+           ? <Loader
+            type="Rings"
+            color="#1778f2"
+            height={100}
+            width={100}
+            timeout={3000} //3 secs
+          /> : 
+          <Posts posts={posts} user={user}/>}
+        </MainLayout> 
     </ModalComponent>
     );
 }
 
-function CreatePostForm () {
+
+function CreatePostForm ({setOpenModal}) {
   const[files, setFiles] = useState([]);
+  const[text, setText] = useState('');
   const[dragDrop, setDragDrop] = useState(true);
+  const[loading, setLoading] = useState(false);
+  const[error, setError] = useState('');
+
+  const createPostFunc = async (e) => {
+      e.preventDefault();
+      setLoading(true);
+      await createPost({text, files}, setOpenModal, setError, setLoading)
+  }
+
+  
 
   return  <div className="form__login--content width-100">
-                    <Formik
-                        initialValues={{ email: '', password: '' }}
-                        validate={values => {
-                            const errors = {};
-                            if (!values.email) {
-                            errors.email = 'Required';
-                            } else if (
-                            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-                            ) {
-                            errors.email = 'Invalid email address';
-                            }
-                            return errors;
-                        }}
-                        onSubmit={(values, { setSubmitting }) => {
-                            setTimeout(() => {
-                            alert(JSON.stringify(values, null, 2));
-                            setSubmitting(false);
-                            }, 400);
-                        }}
-                        >
-                        {({ isSubmitting }) => (
-                            <Form className='form__login--form'>
+                            <form className='form__login--form'>
+                                {error && <div>{error}</div>}
                                 <div className="form-group">
-                                    <textarea type="text" name="post" placeholder="What's going on?" className="input-field post-create-field"/>
-                                    {/* <ErrorMessage name="email" component="div" className="error-msg" /> */}
+                                    <textarea type="text" name="text" 
+                                    placeholder="What's going on?" className="input-field post-create-field"
+                                    value={text}
+                                    onChange={(e)=> setText(e.target.value)}
+                                    />
                                 </div>
                                 {dragDrop && <div className="form-group">
                                 <DragDrop files={files} setFiles={setFiles} closeDrag={setDragDrop} />
                                 </div>}
-                            <button className="btn btn__primary margin-top" type="submit" disabled={isSubmitting}>
+                            <button className="btn btn__primary margin-top" type="submit" onClick={createPostFunc} disabled={loading}>
                                 Post it
                             </button>
-                            </Form>
-                        )}
-                        </Formik>
+                            </form>
                 </div>
 }
 

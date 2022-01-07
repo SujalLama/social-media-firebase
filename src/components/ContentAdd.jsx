@@ -2,7 +2,7 @@ import React from 'react'
 import ProfilePic from './ProfilePic'
 import {AiOutlineLink} from 'react-icons/ai'
 
-const ContentAdd = ({setOpenModal, btn, placeholder}) => {
+const ContentAdd = ({setOpenModal, btn, placeholder,}) => {
     return (
         <div className='content-add box-shadow border-radius'>
             <ProfilePic />

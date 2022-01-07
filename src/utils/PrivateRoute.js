@@ -1,13 +1,15 @@
-import React from 'react'
+import { onAuthStateChanged } from 'firebase/auth';
+import React, {useEffect, useState} from 'react'
 import {Route, Redirect} from 'react-router-dom'
-import { checkLocalStorage} from './checkAuth'
+import { auth } from '../config/firebase-config';
+import { checkLocalStorage } from './checkAuth';
+
 
 const PrivateRoute =  ({component: Component, ...rest}) => {
-    const isUser = true;
     return (
         <Route {...rest}
         render={(props) => (
-            isUser ? <Component {...props} />
+            checkLocalStorage() ? <Component {...props} />
             : <Redirect to="/login" />
             )
         }

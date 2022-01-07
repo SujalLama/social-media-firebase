@@ -1,14 +1,28 @@
-import React from 'react'
+import React,{useState} from 'react'
  import { Formik, Form, Field, ErrorMessage } from 'formik';
- import {withRouter} from 'react-router-dom';
+ import {Redirect, withRouter} from 'react-router-dom';
+import { register } from '../service/auth';
+import { checkLocalStorage } from '../utils/checkAuth';
+ 
 
 const RegisterScreen = ({history}) => {
+    const[error, setError] = useState('');
+
+    async function createUser ({email, password, username}, setSubmitting) {
+        await register({email, password, name: username}, setError);
+        setSubmitting(false);
+    }
+
+     if(checkLocalStorage()) {
+     return <Redirect to="/" />
+   }
     return (
         <div className='login'>
             <div className='form__login'>
                 <h2 className="form__login--heading">
                 Register new account
                 </h2>
+                {error && <div className='error-message'>{error}</div>}
                 <div className="form__login--content">
                     <Formik
                         initialValues={{ email: '', password: '', username: '' }}
@@ -24,10 +38,7 @@ const RegisterScreen = ({history}) => {
                             return errors;
                         }}
                         onSubmit={(values, { setSubmitting }) => {
-                            setTimeout(() => {
-                            alert(JSON.stringify(values, null, 2));
-                            setSubmitting(false);
-                            }, 400);
+                           createUser(values, setSubmitting);
                         }}
                         >
                         {({ isSubmitting }) => (
