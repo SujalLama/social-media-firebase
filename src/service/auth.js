@@ -8,7 +8,6 @@ import { createNotification } from './notification';
 export const register = async ({email, password, name}, setError) => {
     try {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-
         const user = {
             name,
             username: name,
@@ -29,7 +28,6 @@ export const register = async ({email, password, name}, setError) => {
 
 export const login = async ({email, password}, setError) => {
     try {
-        console.log(email,password);
         const userCredential = await signInWithEmailAndPassword(auth, email, password)
         // const data = await getDoc(doc(db, "users", userCredential.uid));
         const docRef = doc(db, "users", userCredential.user.uid);

@@ -46,7 +46,7 @@ const HomeScreen = () => {
       component={<CreatePostForm setOpenModal={setOpenModal} />}
       >
        <MainLayout setOpenModal={setOpenModal}>
-            <ContentAdd  setOpenModal={setOpenModal} btn="post it" placeholder={`What's new, ${user.username}?`}/>
+            <ContentAdd  setOpenModal={setOpenModal} btn="post it" placeholder={`What's new, ${user.username}?`} user={user}/>
            {loading 
            ? <Loader
             type="Rings"
