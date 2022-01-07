@@ -21,3 +21,5 @@
 -- npm install
 -- npm start
 -- You also have to run sass: npm run run-sass
+
+### Thank You
